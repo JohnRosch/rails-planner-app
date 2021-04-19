@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<main>
+  <div class="container py-4">
+    <br>
+    <br>
+    <br>
+    <br>
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <h1 class="text-white">  <%= @task.category.name %> </h1>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"> <%= @task.name %> </h1>
+        <p class="col-md-8 fs-4"> <%= @task.description %> </p>
+        <h4 class="col-md-8 fs-4">  <%= @task.date %>  </h4>
+        <h4 class="col-md-8 fs-4">  <%= @task.user.email %>  </h4>
+
+        <br>
+        <%= link_to 'Edit', edit_task_path(@task), class: "btn btn-secondary btn-sm" %>
+        </button>
+        <%= link_to 'Back', tasks_path, class: "btn btn-secondary btn-sm" %>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      © 2021
+    </footer>
+  </div>
+</main>
+
+
+

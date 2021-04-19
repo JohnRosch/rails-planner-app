@@ -1,0 +1,26 @@
+<br>
+    <%= simple_form_for(@task) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="d-flex flex-column align-items-center">
+    <div class="card text-center" style="width: 22rem;">
+      <div class="card-body">
+          <h1 class="card-body">New Task</h1>
+        <div class="form-inputs form-group d-flex flex-column align-items-center">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.association :category %>
+          <%= f.input :date %>
+          <%= f.text_field :user_id, value: current_user.email, type: :hidden %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.submit class:"btn btn-dark btn-sm" %>
+        </div>
+        <%= link_to 'Back', tasks_path, class: "btn btn-dark btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
