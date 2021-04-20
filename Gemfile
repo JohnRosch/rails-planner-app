@@ -37,7 +37,7 @@ group :development, :test do
 gem 'sqlite3', '~> 1.4'
 end
 
-group :precision do
+group :production do
   gem 'pg', '~> 1.2', '>= 1.2.3'
 end
 
